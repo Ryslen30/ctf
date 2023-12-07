@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: 'Impact', sans-serif;
+            background-color: #222;
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #8b0000; /* Dark Red */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="loginForm">
+        <label for="username">Soldier ID:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Access Code:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="validateForm()">Deploy</button>
+
+        <div id="error-message"></div>
+    </form>
+
+    <script>
+        // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+    apiKey: "AIzaSyBK6ZWy_GRjiIhevSnVHAp8TSrLeypljhQ",
+    authDomain: "ctf-2-cd010.firebaseapp.com",
+    projectId: "ctf-2-cd010",
+    storageBucket: "ctf-2-cd010.appspot.com",
+    messagingSenderId: "557733813222",
+    appId: "1:557733813222:web:d1c14f05d5a0ee65b0d427",
+    measurementId: "G-9ZES372DBY"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+        function validateForm() {
+            var usernameInput = document.getElementById('username').value;
+            if(usernameInput!="George' or 1=1#") {
+                document.getElementById('error-message').innerText ='Invalid Soldier ID ';
+            } else{
+                document.getElementById('error-message').innerText ='';
+
+                alert('Welcome Mr George your country needs you');
+            }
+        }
+    </script>
+
+</body>
+</html>
